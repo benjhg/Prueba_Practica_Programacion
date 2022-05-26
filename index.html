@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> DragonBallz </title>
+    </head>
+    <body>
+
+        <style type="text/css">
+            #planeta 
+            {
+                background-image: url("img/namek.jpg");
+                width: 900px;
+                height: 700px;
+                background-repeat: no-repeat;
+                background-size: 100% ;
+            }
+            .player {
+                height: 100px;
+                width: 100px;
+                display: inline-block;
+                background-image: url("img/goku.png");
+                background-size: contain;
+                position: absolute;
+                background-repeat: no-repeat;
+            }
+
+            .cell{
+                height: 100px;
+                width: 100px;
+                display: inline-block;
+                background-image: url("img/minicell.png");
+                background-size: contain;
+                position: absolute;
+                left: 800px;
+                top: 250px;
+                background-repeat: no-repeat;
+            }
+            #cuadroDeVidaGoku{
+                height: 60px;
+                width: 250px;
+                display: inline-block;
+                background-image: url("img/cuadrovidagoku.png");
+                background-size: contain;
+                position: absolute;
+                left: 9px;
+                top: 8px;
+                background-repeat: no-repeat;
+            }
+            #barraDeVidaGoku{
+                height: 23px;
+                width: 170px;
+                display: inline-block;
+                background-image: url("barravidagoku.png");
+                background-size: contain;
+                position: absolute;
+                left: 24px;
+                top: 6px;
+                background-repeat: no-repeat;
+            }
+            #cuadroDeVidaCell{
+                height: 60px;
+                width: 250px;
+                display: inline-block;
+                background-image: url("cuadrovidaminicell.png");
+                background-size: contain;
+                position: absolute;
+                left: 658px;
+                top: 8px;
+                background-repeat: no-repeat;
+            }
+            #barraDeVidaCell{
+                height: 31px;
+                width: 251px;
+                display: inline-block;
+                background-image: url("barravidaminicell.png");
+                background-size: contain;
+                position: absolute;
+                left: 6px;
+                top: 5px;
+                background-repeat: no-repeat;
+            }
+        </style>
+        <div id="planeta">
+            <div class="player"></div>
+            <div class="cell"></div>
+            <div id="cuadroDeVidaGoku">
+                <div id="barraDeVidaGoku"></div>
+            </div>
+            <div id="cuadroDeVidaCell">
+                <div id="barraDeVidaCell"></div>
+            </div>
+            </div>
+
+        <script type="text/javascript">
+            
+            var player = {
+                left: 450,
+                top: 620
+            }
+
+            var enemies = [
+                {left: 350, top: 200},
+                {left: 450, top: 250},
+                {left: 550, top: 120},
+                {left: 250, top: 320}
+            ]
+            function drawPlayer(){
+                content = "<div class='player' styleº"
+            }
+
+
+            
+        </script>
+    </body>
+</html>
