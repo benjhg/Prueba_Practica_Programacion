@@ -1,115 +1,165 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> DragonBallz </title>
-    </head>
-    <body>
 
-        <style type="text/css">
-            #planeta 
-            {
-                background-image: url("img/namek.jpg");
-                width: 900px;
-                height: 700px;
-                background-repeat: no-repeat;
-                background-size: 100% ;
-            }
-            .player {
-                height: 100px;
-                width: 100px;
-                display: inline-block;
-                background-image: url("img/goku.png");
-                background-size: contain;
-                position: absolute;
-                background-repeat: no-repeat;
-            }
+<head>
+    <title>DragonBall Z</title>
+</head>
 
-            .cell{
-                height: 100px;
-                width: 100px;
-                display: inline-block;
-                background-image: url("img/minicell.png");
-                background-size: contain;
-                position: absolute;
-                left: 800px;
-                top: 250px;
-                background-repeat: no-repeat;
-            }
-            #cuadroDeVidaGoku{
-                height: 60px;
-                width: 250px;
-                display: inline-block;
-                background-image: url("img/cuadrovidagoku.png");
-                background-size: contain;
-                position: absolute;
-                left: 9px;
-                top: 8px;
-                background-repeat: no-repeat;
-            }
-            #barraDeVidaGoku{
-                height: 23px;
-                width: 170px;
-                display: inline-block;
-                background-image: url("barravidagoku.png");
-                background-size: contain;
-                position: absolute;
-                left: 24px;
-                top: 6px;
-                background-repeat: no-repeat;
-            }
-            #cuadroDeVidaCell{
-                height: 60px;
-                width: 250px;
-                display: inline-block;
-                background-image: url("cuadrovidaminicell.png");
-                background-size: contain;
-                position: absolute;
-                left: 658px;
-                top: 8px;
-                background-repeat: no-repeat;
-            }
-            #barraDeVidaCell{
-                height: 31px;
-                width: 251px;
-                display: inline-block;
-                background-image: url("barravidaminicell.png");
-                background-size: contain;
-                position: absolute;
-                left: 6px;
-                top: 5px;
-                background-repeat: no-repeat;
-            }
-        </style>
-        <div id="planeta">
-            <div class="player"></div>
-            <div class="cell"></div>
-            <div id="cuadroDeVidaGoku">
-                <div id="barraDeVidaGoku"></div>
-            </div>
-            <div id="cuadroDeVidaCell">
-                <div id="barraDeVidaCell"></div>
-            </div>
-            </div>
+<body>
+    <style type="text/css">
+        #namek {
+            background-image: url("img/namek.jpg");
+            width: 850px;
+            height: 600px;
+        }
 
-        <script type="text/javascript">
-            
-            var player = {
-                left: 450,
-                top: 620
-            }
+        #players {
+            background-image: url("img/goku.png");
+            width: 50px;
+            height: 58px;
+            position: absolute;
+            top: 150px;
+            left: 150px;
+        }
 
-            var enemies = [
-                {left: 350, top: 200},
-                {left: 450, top: 250},
-                {left: 550, top: 120},
-                {left: 250, top: 320}
-            ]
-            function drawPlayer(){
-                content = "<div class='player' styleº"
-            }
+        .enemigos {
+            background-image: url("img/minicell.png");
+            width: 45px;
+            height: 50px;
+            position: absolute;
+            top: 250px;
+            left: 800px;
+        }
+
+        .cuadrovidacell {
+            background-image: url("img/cuadrovidaminicell.png");
+            width: 190px;
+            height: 30px;
+            position: absolute;
+            top: 15px;
+            left: 660px;
+        }
+
+        .vidacell {
+            height: 34px;
+            width: 170px;
+            display: inline-block;
+            background-image: url("img/barravidaminicell.png");                
+            background-size: contain;
+            position: absolute;
+            left: 665px;
+            top: 20px;
+            background-repeat: no-repeat;
+        }
+
+        .cuadrovidagoku {
+            background-image: url("img/cuadrovidagoku.png");
+            width: 975px;
+            height: 900px;
+            position: absolute;
+            top: 600px;
+            left: 80px;
+        }
+
+        .vidagoku {
+            height: 34px;
+            width: 170px;
+            display: inline-block;
+            background-image: url("img/barravidagoku.png");
+            background-size: contain;
+            position: absolute;
+            left: 34px;               
+            top: 20px;
+            background-repeat: no-repeat;
+
+        }
+
+        .cuadrovidagoku {
+            background-image: url("img/cuadrovidagoku.png");
+            width: 190px;
+            height: 30px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+    </style>
+    <div id="namek">
+        <div id="players">
+            <div class="players";style="left: 150px; top: 150px">
+                     </div>
+               </div>
+         </div>
+    </div>
+      
 
 
-            
-        </script>
-    </body>
+
+        <div id="enemigos">
+            <div class="enemigos"></div>
+        </div>
+        <div id="vidacell"></div>
+        <div class="vidacell">
+        </div>
+    </div>
+    <div id="cuadrovidacell"></div>
+    <div class="cuadrovidacell">
+</div>
+    </div>
+
+    <div id="vidagoku"></div>
+    <div class="vidagoku">
+    </div>
+    </div>
+    <div id="cuadrovidagoku"></div>
+    <div class="cuadrovidagoku">
+    </div>
+    </div>
+
+    <script type="text/javascript">
+
+        var leftValue = 150;
+        var topValue = 150;
+        var run = 1;
+        var disparar = []
+
+        function update(){
+            document.getElementById("players").style.left = leftValue+"px";
+            document.getElementById("players").style.top = topValue+"px";
+        }
+        
+        document.onkeydown = function (e){
+            console.log(e);
+
+            if (run == 1) {
+                run = 2;
+            }
+            else if (run == 2) {
+                run = 1;
+            }
+
+            if (e.keyCode == 37 && leftValue > 0) {
+                leftValue = leftValue - 10;
+                document.getElementById("players").style.left = leftValue + "px";
+                document.getElementById("players").style.backgroundImage = "url('img/gokuleft.png')"
+            }
+            else if (e.keyCode == 39 && leftValue < 800) {
+                leftValue = leftValue + 10;
+                document.getElementById("players").style.left = leftValue + "px";
+                document.getElementById("players").style.backgroundImage = "url('img/gokuright.png')"
+            }
+            else if (e.keyCode == 40 && topValue < 500) {
+                topValue = topValue + 10;
+                document.getElementById("players").style.top = topValue + "px";
+                document.getElementById("players").style.backgroundImage = "url('img/gokudown.png')"
+            }
+            else if (e.keyCode == 38 && topValue > 0) {
+                topValue = topValue - 10;
+            document.getElementById("players").style.top = topValue + "px";
+            document.getElementById("players").style.backgroundImage = "url('img/gokuup.png')"
+        }
+        update();
+    }
+    </script>
+</body>
+
 </html>
